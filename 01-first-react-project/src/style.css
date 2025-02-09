@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: purple;
+    color: white;
+    font-family: sans-serif;
+}
+.header{
+    width: 50%;
+    height: 30vh;
+    text-align: center;
+    background-color: blue;
+    display: block;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.header h1{
+    font-size: 3rem;
+}
+.header p{
+    font-size: 1.5rem;
+    font-weight: 300;
+
+}
