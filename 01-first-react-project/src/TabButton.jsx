@@ -1,6 +1,6 @@
 import "./style.css";
 
-export default function TabButton({children}){
-
-    return <button>{children}</button>
+export default function TabButton({children, onSelect}){
+   
+    return <button onClick={onSelect}>{children}</button>
 }

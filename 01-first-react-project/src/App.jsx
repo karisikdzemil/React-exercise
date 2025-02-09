@@ -1,20 +1,15 @@
 import Header from "./Header";
 import TabButton from "./TabButton";
 import { CORE_CONCEPTS } from "./data";
+import { EXAMPLES } from "./data";
 import CoreConcept from "./CoreConcept";
 function App() {
-
-    function getCards (){
-        CORE_CONCEPTS.map(el => {
-            const li = `<li>
-                </img src={el.src}>
-                <h1>{el.title}</h1>
-                <p>el.desription</p>
-            </li>
-            `;
-            document.getElementById("proba").append(li)
-        })
+    
+    let tabContent = "Please select a topic."
+    function handleSelect(selectedButton) {
+        tabContent = selectedButton;
     }
+
 
     return(
         <div>
@@ -28,13 +23,14 @@ function App() {
             <section className="tabBtn-content">
                 <h1>Examples</h1>
                 <div className="buttons">
-                    <TabButton children={"Components"}/>
-                    <TabButton children={"JSX"}/>
-                    <TabButton children={"Props"}/>
-                    <TabButton children={"State"}/>
-
+                    <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
+                    <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+                    <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+                    <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
                 </div>
-                    <div className="btnContent"></div>
+                    <div className="btnContent">
+                        {tabContent}
+                    </div>
             </section>
         </div>
 
