@@ -4,27 +4,100 @@
     box-sizing: border-box;
 }
 body{
-    background-color: purple;
+    background-color: rgb(89, 2, 89);
     color: white;
     font-family: sans-serif;
 }
 .header{
-    width: 50%;
-    height: 30vh;
+    width: 60%;
+    min-height: 30vh;
     text-align: center;
-    background-color: blue;
+    /* background-color: blue; */
     display: block;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 10px;
+    padding: 1rem;
 }
 .header h1{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 .header p{
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+}
+.header img{
+    width: 30%;
+    /* background-color: white; */
+    margin: auto;
+}
+.cards{
+    width: 70%;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.cards h1{
+    color: rgba(255, 255, 255, 0.4);
+}
+.tabBtn-content{
+    width: 70%;
+    height: 50vh;
+    margin: auto;
+    background-color: blue;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+.buttons{
+    
+    display: flex;
+    gap: 10px;
+}
+.buttons button{
+    padding: 5px;
+    border: 0;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.4);
+   transition: 0.5s;
+}
+.buttons button:hover{
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border-radius: 5px;
+}
 
+.coreConcepts{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+.coreConcepts li{
+    list-style: none;
+    width: 20%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+.coreConcepts li p{
+    font-size: 14px;
+    color: rgb(204, 199, 199);
+    font-weight: 200;
+}
+.coreConcepts img{
+    width: 50%;
 }
