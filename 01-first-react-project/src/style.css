@@ -52,11 +52,14 @@ body{
 }
 .tabBtn-content{
     width: 70%;
-    height: 50vh;
+    height: 80vh;
     margin: auto;
-    background-color: blue;
+    /* background-color: blue; */
     padding: 1.5rem;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 .buttons{
     
@@ -101,6 +104,18 @@ border-radius: 5px;
 .coreConcepts img{
     width: 50%;
 }
-.active{
-    background-color: red;
+.buttons button.active{
+    background-color: rgb(158, 42, 215);
+    border-radius: 5px;
+    color: white;
+}
+.tabContentDiv{
+    width: 100%;
+    min-height: 40vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 10px;
 }
