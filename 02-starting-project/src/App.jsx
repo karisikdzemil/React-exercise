@@ -9,13 +9,12 @@ function App() {
 
   function getDataFromInput(inputData){
     setInvestmentObject(inputData);
-    console.log(investmentObject)
   }
   return (
     <>
     <Header/>
     <UserInput getData={getDataFromInput}/>
-    <Result />
+    <Result renderingData={investmentObject}/>
     </>
   )
 } 

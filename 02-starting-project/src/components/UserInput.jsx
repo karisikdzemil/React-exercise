@@ -8,8 +8,12 @@ let fieldValues = {
   expectedReturn: 6,
   duration: 10,
 };
-
+let isCalled = false;
 export default function UserInput({ appArr, getData }) {
+    // if(!isCalled){
+    //     getData(calculateInvestmentResults(fieldValues));
+    //     isCalled = true;
+    // }
 
   function calculateHandler(event) {
     fieldValues[event.target.name] = Number(event.target.value);
