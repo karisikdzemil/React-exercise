@@ -16,7 +16,7 @@ export default function UserInput({ appArr, getData }) {
     // }
 
   function calculateHandler(event) {
-    fieldValues[event.target.name] = Number(event.target.value);
+    fieldValues[event.target.name] = Number(event.target.value);    
     const resultArr = calculateInvestmentResults(fieldValues);
     appArr = resultArr;
     getData(resultArr)
