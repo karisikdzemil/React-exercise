@@ -1,21 +1,25 @@
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
 import Input from './components/Input';
+import Content from './components/Content';
 import './index.css';
 
 function App() {
 
+  function getValueFromInput(inputData){
+    console.log(inputData)
+  }
+
   return (
     <Wrapper>  
       <Header />
-      <Input />
+      <Input passingFunction={getValueFromInput}/>
+      <ul className="w-150 min-h-80 flex items-center flex-col gap-5">
+      <Content />
+      </ul>
+
     </Wrapper >
   )
 }
 
-export default App
-
-
-"
-  Hi chatgpt, my name is Dzemil, I'm from Serbia. In last few days i practiced English 2 hours per day. I have to include this way of practice, every night I will write text about my day and my job for that day. Today when I wake up i go to the bathroom like a everyday after that I opened my laptop and readed today news. Today i learned some about tenses and now I am keeping my mind on using that. I am finished for today because I need to sleep I am very tired.
-"
+export default App 
