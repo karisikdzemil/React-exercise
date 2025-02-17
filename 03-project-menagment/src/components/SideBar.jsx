@@ -1,4 +1,8 @@
-export default function SideBar( {changeModal} ) {
+export default function SideBar( {changeModal, project} ) {
+   
+        if(project.length > 0){
+            console.log(project[0].title)
+        }
 
 
   return (
@@ -10,9 +14,8 @@ export default function SideBar( {changeModal} ) {
         + Add Project
       </button>
       <ul className="text-white flex flex-col gap-5">
-        {/* <li className="bg-slate-700 pl-5 py-1 ">Something</li>
-        <li>Something</li> */}
+         {project.map(el =>(<li key={el.title} className="bg-slate-700 pl-5 py-1 ">{el.title}</li> ))}
       </ul>
     </section>
-  );
+  ); 
 }
