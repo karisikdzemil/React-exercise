@@ -3,6 +3,7 @@ import { useState } from "react";
 import SideBar from "./components/SideBar";
 import MainContent from "./components/MainContent";
 import AddProject from "./components/AddProject";
+import AddTask from "./components/AddTask";
 import Wrapper from "./components/Wrapper";
 
 function App() {
@@ -34,8 +35,9 @@ function App() {
     <>
     <SideBar changeModal={TrueModal} project={projects}/>
       <Wrapper>
-     {modal === "mainContent" &&  <MainContent />}
-     {modal === "addProject" &&  <AddProject projectValue={projectValue} changeModal={TrueModal}/>}
+     {/* {modal === "mainContent" &&  <MainContent />}
+     {modal === "addProject" &&  <AddProject projectValue={projectValue} changeModal={TrueModal}/>} */}
+      <AddTask />
       </Wrapper>
    
     </>

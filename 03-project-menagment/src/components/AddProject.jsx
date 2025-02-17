@@ -8,7 +8,10 @@ export default function AddProject({ projectValue, changeModal }) {
   return (
     <form className=" absolute w-3/5 h-2/3 mt-20">
       <div className="w-[90%] h-10  my-5 flex gap-3 justify-end">
-        <button onClick={()=> changeModal("mainContent")} className="text-gray-800 font-medium hover:bg-gray-500 px-4 py-2 rounded-md ">
+        <button
+          onClick={() => changeModal("mainContent")}
+          className="text-gray-800 font-medium hover:bg-gray-500 px-4 py-2 rounded-md "
+        >
           Cancel
         </button>
         <button
