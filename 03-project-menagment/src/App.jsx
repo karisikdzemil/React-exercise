@@ -32,7 +32,11 @@ function App() {
     }
   }
   function clickedLiObj(obj){
+    console.log(obj)
     setProject(obj);
+  }
+  function removeProject(prj){
+      setProjects(projects.filter(el=> (el !== prj)));
   }
 
   return (
@@ -41,7 +45,7 @@ function App() {
       <Wrapper>
      {modal === "mainContent" &&  <MainContent />}
      {modal === "addProject" &&  <AddProject projectValue={projectValue} changeModal={TrueModal}/>}
-      {modal === "addTask" && <AddTask showProject={project}/>}
+      {modal === "addTask" && <AddTask showProject={project} projectForRemove={removeProject} changeModal={TrueModal}/>}
       </Wrapper>
    
     </>
