@@ -11,43 +11,54 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState({});
 
-  function TrueModal(modd){
+  function TrueModal(modd) {
     setModal(modd);
   }
   let wrongEnter;
-  function projectValue(event, inpTitle, inpText, inpDate){
+  function projectValue(event, inpTitle, inpText, inpDate) {
     event.preventDefault();
-    if(inpTitle === '' || inpText === '' || inpDate === ''){
-        wrongEnter = <p className="text-red-600">You must enter all fields!</p>;
-    }else{
+    if (inpTitle === "" || inpText === "" || inpDate === "") {
+      wrongEnter = <p className="text-red-600">You must enter all fields!</p>;
+    } else {
       let dataObj = {
         title: inpTitle,
         description: inpText,
-        date: inpDate
-      }
+        date: inpDate,
+      };
 
-      setProjects(prev => [...prev, dataObj]);
+      setProjects((prev) => [...prev, dataObj]);
       console.log(projects);
       TrueModal("mainContent");
     }
   }
-  function clickedLiObj(obj){
-    console.log(obj)
+  function clickedLiObj(obj) {
+    console.log(obj);
     setProject(obj);
   }
-  function removeProject(prj){
-      setProjects(projects.filter(el=> (el !== prj)));
+  function removeProject(prj) {
+    setProjects(projects.filter((el) => el !== prj));
   }
 
   return (
     <>
-    <SideBar changeModal={TrueModal} singleClickedLi={clickedLiObj} project={projects}/>
+      <SideBar
+        changeModal={TrueModal}
+        singleClickedLi={clickedLiObj}
+        project={projects}
+      />
       <Wrapper>
-     {modal === "mainContent" &&  <MainContent />}
-     {modal === "addProject" &&  <AddProject projectValue={projectValue} changeModal={TrueModal}/>}
-      {modal === "addTask" && <AddTask showProject={project} projectForRemove={removeProject} changeModal={TrueModal}/>}
+        {modal === "mainContent" && <MainContent changeModal={TrueModal} />}
+        {modal === "addProject" && (
+          <AddProject projectValue={projectValue} changeModal={TrueModal} />
+        )}
+        {modal === "addTask" && (
+          <AddTask
+            showProject={project}
+            projectForRemove={removeProject}
+            changeModal={TrueModal}
+          />
+        )}
       </Wrapper>
-   
     </>
   );
 }

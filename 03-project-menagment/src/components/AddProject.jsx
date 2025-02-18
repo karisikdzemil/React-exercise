@@ -57,7 +57,6 @@ export default function AddProject({ projectValue, changeModal }) {
           className="w-[100%] h-10 mt-3 bg-gray-300 pl-5 pr-5"
         />
       </div>
-      {/* {writeAlert} */}
     </form>
   );
 }
