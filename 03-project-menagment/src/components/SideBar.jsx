@@ -1,8 +1,16 @@
-export default function SideBar( {changeModal, project} ) {
+import { useRef } from "react";
+export default function SideBar( {changeModal, project, singleClickedLi} ) {
+
+  function showClickedLiHandler(event){
+    const clickedEl = project.find(el => (event.target.textContent === el.title));
+    singleClickedLi(clickedEl);
+    console.log(clickedEl)
+    changeModal("addTask");
+  }
    
-        if(project.length > 0){
-            console.log(project[0].title)
-        }
+        // if(project.length > 0){
+        //     console.log(project[0].title)
+        // }
   return (
     <section className="w-[25%] h-[90vh] bg-black mt-[10vh] rounded-tr-lg pt-20 pl-10 pr-10 flex flex-col gap-10 self-center float-left">
       <h1 className="text-gray-200 font-sans text-3xl font-medium">
@@ -12,7 +20,7 @@ export default function SideBar( {changeModal, project} ) {
         + Add Project
       </button>
       <ul className="text-white flex flex-col gap-5">
-         {project.map(el =>(<li key={el.title} className="hover:bg-slate-700 pl-5 py-1 cursor-pointer ">{el.title}</li> ))}
+         {project.map(el =>(<li ref={singleClickedLi} onClick={showClickedLiHandler}  key={el.title} className="hover:bg-slate-700 pl-5 py-1 cursor-pointer ">{el.title}</li> ))}
       </ul>
     </section>
   ); 
