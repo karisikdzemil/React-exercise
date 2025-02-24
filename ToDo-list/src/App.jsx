@@ -1,10 +1,13 @@
 
+import Wrapper from "./components/Wrapper"
+import Content from "./components/Content"
+
 function App() {
 
   return (
-    <>
-     <h1 className="bg-slate-400">RADIII</h1>
-    </>
+      <Wrapper>
+        <Content />
+      </Wrapper>
   )
 }
 
