@@ -5,9 +5,13 @@ export default function Content() {
     const [listItems, setListItems] = useState([]);
     const inputVal = useRef();
     function postTodoHandler(){
+        const currentValue = inputVal.current.value;
         if(inputVal.current.value !== ''){
-            setListItems(prevItems => [...prevItems, inputVal.current.value]);
+            setListItems(prevItems => [...prevItems, currentValue]);
+            inputVal.current.value = '';
         }
+
+
     }
   return (
     <div className="w-[50%] min-h-[60vh] bg-white rounded-md flex flex-col justify-center align-center">
