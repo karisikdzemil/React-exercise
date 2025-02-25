@@ -1,4 +1,4 @@
-const shopItems = [
+export const shopItems = [
     // Kategorija: Majice
     {
       name: "Crna Majica",
@@ -178,4 +178,3 @@ const shopItems = [
         "https://ingalanterija.rs/wp-content/uploads/2023/03/polo-xchange-muska-kozna-torba-crna-elegantna2.jpg",
     },
   ];
-  console.log(shopItems);
