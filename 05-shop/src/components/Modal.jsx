@@ -46,3 +46,5 @@ export default function Modal({ open, close, cartItems }) {
     </dialog>
   );
 }
+
+// Stao sam do azuriranja state za total price kad se ukloni element to nesto ne mogu da napravim
