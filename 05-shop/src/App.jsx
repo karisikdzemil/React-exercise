@@ -13,7 +13,7 @@ function App() {
       ...prevCartElements,
       {
         name: event.target.closest("li").querySelector("h1").textContent,
-        price: event.target.closest("li").querySelector("p").textContent,
+        price: event.target.closest("li").querySelector("span").textContent,
       },
     ]);
     console.log(cartElements);
