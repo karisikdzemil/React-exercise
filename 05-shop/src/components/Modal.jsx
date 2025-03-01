@@ -53,7 +53,7 @@ export default function Modal({ open, close, cartItems }) {
           </li>
         ))}
       </ul>
-      {totalPrice > 0 && <p>Total price: {totalPrice} RSD</p>}
+      {totalPrice > 0 && <p className="mt-5">Total price: {totalPrice} RSD</p>}
       <button
         className="p-2 bg-gray-500 text-white rounded-md hover:bg-red-400 mt-5"
         onClick={close}
