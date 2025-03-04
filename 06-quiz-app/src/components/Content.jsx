@@ -1,14 +1,18 @@
 import QuestionTimer from "./QuestionTimer";
-export default function Content( {showQuestion, pickAnswer } ) {
+import { useContext } from "react";
+import { QuizContext } from "../store/quiz-app-context";
+export default function Content( { pickAnswer } ) {
 
-    const shuffleAnswers = showQuestion.answers.sort(() => Math.random() - 0.5);
+  const {question} = useContext(QuizContext);
+
+    const shuffleAnswers = question.answers.sort(() => Math.random() - 0.5);
 
   return (
     <div className="w-[50%] h-[60vh] m-auto rounded-md bg-indigo-800 mt-5 flex flex-col">
-        <QuestionTimer />
+        <QuestionTimer timerFunc={pickAnswer}/>
       <div className="w-full h-20">
         <p className="w-full h-full text-center text-2xl p-3 text-indigo-200">
-          {showQuestion.text}
+          {question.text}
         </p>
       </div>
       <ul className="w-full h-[40vh] flex flex-col items-center justify-evenly">

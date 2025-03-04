@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Content from "./components/Content";
 import GameOver from "./components/GameOver";
 import questions from "./questions";
+import {QuizContext} from "./store/quiz-app-context.jsx";
 
 let indexOfQuestion = 0;
 function App() {
@@ -14,13 +15,18 @@ function App() {
     indexOfQuestion++;
     setQuestion(questions[indexOfQuestion]);
     console.log(userAnswers)
+    console.log(indexOfQuestion)
+  }
+
+  const ctxVal = {
+    question
   }
 
   return (
-    <>
+    <QuizContext.Provider value={ctxVal}>
     <Header />
     {indexOfQuestion !== questions.length ? <Content showQuestion={question} pickAnswer={nextQuestionHandler}/> : <GameOver />}
-    </>
+    </QuizContext.Provider>
   )
 }
 

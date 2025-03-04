@@ -1,19 +1,31 @@
 import { useState, useEffect, useRef } from "react"
 
-export default function QuestionTimer(){    
+export default function QuestionTimer( {timerFunc} ){    
     const [remainingTime, setRemainingTime] = useState(3000)
     const dialog = useRef();
     useEffect(() => {
-         setInterval(() => {
+         const interval = setInterval(() => {
         setRemainingTime(prevRemainingTime => prevRemainingTime - 100);
+        console.log("radi")
     }, 100);
 
-    setTimeout(() => {
-        console.log(dialog.current.value)
+    const timeout = setTimeout(() => {
+        console.log(dialog.current.value);
+        timerFunc([]);
+        console.log("timeout");
+        clearInterval(interval)
+        setRemainingTime(3000);
     }, 3000)
-    }, []);
+
+    return () => {
+        clearInterval(interval);
+        clearTimeout(timeout)
+    }
+    }, [timerFunc]);
+
 
     return(
         <progress ref={dialog}  className="w-3/6 h-2.5 m-auto " max={3000} value={remainingTime}></progress>
     )
 }
+// TREBA DA SE VIDE OVI INTERVALI I OVO
