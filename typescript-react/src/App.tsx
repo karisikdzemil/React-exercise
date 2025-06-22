@@ -1,12 +1,13 @@
 import "./App.css";
-import { Person } from "./Person";
+import { User } from "./Person";
+import { UserProvider } from "./UserContextProvider";
 
 function App() {
   return (
-    <>
-      <Person name={"Pedro"} age={22} isMarried={false} />
-      <Person name={"Colin"} age={24} isMarried={true} />
-    </>
+    <UserProvider>
+      <User name={"Pedro"} age={22} isMarried={false} />
+      <User name={"Colin"} age={24} isMarried={true} />
+    </UserProvider>
   );
 }
 
