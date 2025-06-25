@@ -35,7 +35,6 @@ export default function Todo() {
             </li>
           ))}
         </ul>
-      </div>
-      
+      </div>      
     )
 }
